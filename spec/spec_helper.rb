@@ -1,5 +1,4 @@
 require 'rspec'
-require 'fakeweb'
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib')
 require 'filmaffinity'
 
@@ -12,7 +11,7 @@ FILMAFFINITY_SAMPLES = {
 }
 
 
-FakeWeb.allow_net_connect = false
-FILMAFFINITY_SAMPLES.each do |url, response|
- FakeWeb.register_uri(:get, url, response: read_fixture(response))
-end
+# FakeWeb.allow_net_connect = false
+# FILMAFFINITY_SAMPLES.each do |url, response|
+#  FakeWeb.register_uri(:get, url, response: read_fixture(response))
+# end
