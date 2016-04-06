@@ -12,13 +12,13 @@ describe "FilmAffinity::Search" do
 
   end
 
-  describe "valid parse" do
-    it "#should parse id" do
+  describe "#parse_movie" do
+    it "should parse id" do
       id = "504889"
       expect(id).to eq(search.parse_movie.id)
     end
 
-    it "#should parse title" do
+    it "should parse title" do
       title = "El show de Truman (Una vida en directo)  (1998)"
       expect(title).to eq(search.parse_movie.title)
     end
