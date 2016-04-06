@@ -1,5 +1,7 @@
-require 'open-uri'
-require 'nokogiri'
+require "open-uri"
+require "nokogiri"
 
-require 'filmaffinity/movie'
-require 'filmaffinity/search'
+require "filmaffinity/movie"
+require "filmaffinity/search"
+
+
