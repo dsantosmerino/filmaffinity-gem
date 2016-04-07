@@ -23,43 +23,53 @@ module FilmAffinity
     end
 
     def country
-      raw_country = document_html.at("#country-img").next_sibling
-      raw_country.
+      raw_country = document_html.at("#country-img").next_sibling.content
+      raw_country.gsub(/\A[[:space:]]+|[[:space:]]+\z/, '')
     end
 
     def director
-      document_html.at('dd[itemprop="datePublished"]').content[/\d+/].to_i
+      raw_director = document_html.at('a[itemprop="url"]').content
+      raw_director.strip
     end
 
     def script
-      document_html.at('dd[itemprop="datePublished"]').content[/\d+/].to_i
+      document_html.at('dt:contains("Guión")').next_sibling.next_sibling.content
     end
 
     def music
-      document_html.at('dd[itemprop="datePublished"]').content[/\d+/].to_i
+      document_html.at('dt:contains("Música")').next_sibling.next_sibling.content
     end
 
     def photography
-      document_html.at('dd[itemprop="datePublished"]').content[/\d+/].to_i
+      document_html.at('dt:contains("Fotografía")').next_sibling.next_sibling.content
     end
 
     def cast
-      ["Jim Carrey",
-      "Laura Linney",
-      "Noah Emmerich",
-      "Ed Harris"]
+      actors = []
+      node = document_html.search('span[itemprop="actor"]')
+      node.each do |actor|
+        actors << actor.at('span[itemprop="name"]').content.strip
+      end
+      actors
     end
 
     def company
-
+      document_html.at('dt:contains("Productora")').next_sibling.next_sibling.content
     end
 
-    def genre
+    def genres
+      genres = []
+      node = document_html.at('dt:contains("Género")').next_sibling.next_sibling
+      raw_genres = node.search("a")
+      raw_genres.each do |raw_genre|
+        genres << raw_genre.content.strip
+      end
+      genres
 
     end
 
     def sinopsis
-
+      document_html.at('dd[itemprop="description"]').content
     end
 
     def prizes
@@ -67,7 +77,9 @@ module FilmAffinity
     end
 
     def rating
-
+      document_html.at('div[itemprop="ratingValue"]').content.strip.to_f
+      # <div id="movie-rat-avg" itemprop="ratingValue" content="7.6">
+      #                   7,6                    </div>
     end
 
 
