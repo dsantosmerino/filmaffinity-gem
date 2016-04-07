@@ -11,7 +11,7 @@ module FilmAffinity
     end
 
     def generate_html
-      open("http://www.filmaffinity.com/es/film#{@id}.html")
+      open(Constants.urls[:movie] % id)
     end
 
     def year

@@ -15,7 +15,13 @@ module FilmAffinity
     end
 
     def generate_html
-      open("http://www.filmaffinity.com/es/topgen.php")
+      open(Constants.urls[:top])
+    end
+
+    def options_query
+      return @query_options unless @query_options.nil?
+      if options
+      end
     end
 
     def parse_movies

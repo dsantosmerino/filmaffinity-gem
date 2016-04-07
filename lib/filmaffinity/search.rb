@@ -19,7 +19,7 @@ module FilmAffinity
     end
 
     def generate_html
-      open("http://www.filmaffinity.com/es/search.php?stext=#{CGI.escape(@query)}&stype=title")
+      open(Constants.urls[:search_by_title] % CGI.escape(@query))
     end
 
     def parse_movie
