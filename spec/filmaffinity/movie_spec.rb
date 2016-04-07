@@ -61,7 +61,6 @@ describe "FilmAffinity::Movie" do
 
   describe "#cast" do
     subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
-
     it "should return an Array" do
       expect(movie.cast).to be_an(Array)
     end
@@ -78,7 +77,6 @@ describe "FilmAffinity::Movie" do
 
   describe "#company" do
     subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
-
     it "should return a String" do
       expect(movie.company).to be_a(String)
     end
@@ -89,14 +87,6 @@ describe "FilmAffinity::Movie" do
 
   describe "#genres" do
     subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
-
-<<<<<<< HEAD
-    it "#duration" do
-      duration = 103
-      expect(duration).to eq(movie.duration)
-    end
-
-=======
     it "should return an Array" do
       expect(movie.genres).to be_an(Array)
     end
@@ -108,7 +98,6 @@ describe "FilmAffinity::Movie" do
       ]
       expect(movie.genres).to include(*expected_genres)
     end
->>>>>>> 9833aa805f32e9d937fbeb749893fc7e48a8245c
   end
 
 end
