@@ -11,10 +11,10 @@ The filmaffinity gem allows you to easy access publicly available data from Film
     search = FilmAffinity::Search.new("Padrino")
 
     search.movies
-    #=> #<FilmAffinity::Movie>
-        #<FilmAffinity::Movie>
-        #<FilmAffinity::Movie>
-        ...
+    #=> [<FilmAffinity::Movie>
+         <FilmAffinity::Movie>
+         <FilmAffinity::Movie>
+         ...]
 
     search.movies.first
     #=> #<FilmAffinity::Movie>

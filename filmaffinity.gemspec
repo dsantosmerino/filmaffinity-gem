@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   s.require_paths = ['lib']
-  s.homepage      = 'http://rubygems.org/gems/filmaffinity'
+  s.homepage      = 'https://github.com/davidsantosmerino/filmaffinity-gem'
   s.license       = 'MIT'
   s.add_dependency 'nokogiri', ' ~> 1.6'
   s.add_development_dependency 'rake', '~> 10.0'
