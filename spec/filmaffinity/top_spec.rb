@@ -3,7 +3,7 @@ require_relative "../spec_helper"
 describe "FilmAffinity::Top" do
 
   describe "#create_document_html" do
-    subject(:top) { FilmAffinity::Search.new("truman") }
+    subject(:top) { FilmAffinity::Top.new }
 
     it "#create_document_html" do
       document_html = top.document_html
