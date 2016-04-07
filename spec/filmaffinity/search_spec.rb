@@ -1,10 +1,12 @@
-require ".././spec_helper"
+require_relative "../spec_helper"
+require_relative "matchers/include-movie"
+
+
 describe "FilmAffinity::Search" do
-  
-  subject(:search) { FilmAffinity::Search.new("truman show") }
-  
-  describe "valid search" do
-    # Get The Truman Show (1998)
+
+  describe "#create_document_html" do
+    subject(:search) { FilmAffinity::Search.new("truman") }
+
     it "#create_document_html" do
       document_html = search.create_document_html
       expect(document_html).to be_an(Nokogiri::HTML::Document)

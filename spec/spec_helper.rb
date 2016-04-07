@@ -1,6 +1,7 @@
 require 'rspec'
-$LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib')
+$LOAD_PATH.unshift(File.dirname(__FILE__) + "/../lib")
 require 'filmaffinity'
+
 
 def read_fixture path
   File.read(File.expand_path(File.join(File.dirname(__FILE__), 'fixtures', path)))
