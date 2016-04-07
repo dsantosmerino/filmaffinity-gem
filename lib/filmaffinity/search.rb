@@ -26,7 +26,7 @@ module FilmAffinity
     end
 
     def parse_movie
-      id    = create_document_html.at('meta[property="og:url"]')['content'][/\d+/]
+      id    = create_document_html.at('meta[property="og:url"]')['content'][/\d+/].to_i
       title = create_document_html.at('meta[property="og:title"]')['content']
       FilmAffinity::Movie.new(id,title)
     end
