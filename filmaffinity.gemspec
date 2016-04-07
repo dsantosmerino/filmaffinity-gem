@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.homepage      = 'http://rubygems.org/gems/filmaffinity'
   s.license       = 'MIT'
-  s.add_dependency 'nokogiri', ' ~> 1.6.7.2'
-  s.add_development_dependency 'rake', '~> 10.4.2'
-  s.add_development_dependency 'rspec', '~> 3.4.0'
+  s.add_dependency 'nokogiri', ' ~> 1.6'
+  s.add_development_dependency 'rake', '~> 10.0'
+  s.add_development_dependency 'rspec', '~> 3.3'
 end
