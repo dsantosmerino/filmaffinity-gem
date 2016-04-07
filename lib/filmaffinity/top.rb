@@ -15,13 +15,18 @@ module FilmAffinity
     end
 
     def generate_html
-      open(Constants.urls[:top])
+      open(Constants.urls[:top] % query_options)
     end
 
-    def options_query
-      return @query_options unless @query_options.nil?
-      if options
+    def query_options
+      query_options = String.new
+      if @options
+        query_options += "?"
+        @options.each do |key,value|
+          query_options += Constants.query_params[key] % value
+        end
       end
+      query_options.gsub(/\&$/,"")
     end
 
     def parse_movies
