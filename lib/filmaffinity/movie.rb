@@ -77,12 +77,8 @@ module FilmAffinity
     end
 
     def rating
-      document_html.at('div[itemprop="ratingValue"]').content.strip.to_f
-      # <div id="movie-rat-avg" itemprop="ratingValue" content="7.6">
-      #                   7,6                    </div>
+      raw_rating = document_html.at('div[itemprop="ratingValue"]').content.strip
+      raw_rating.gsub(",",".").to_f
     end
-
-
-
   end
 end
