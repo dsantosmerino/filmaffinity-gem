@@ -1,5 +1,3 @@
-require "cgi"
-
 module FilmAffinity
   class Top
     def initialize options = nil

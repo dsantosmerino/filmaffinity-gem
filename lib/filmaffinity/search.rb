@@ -1,5 +1,3 @@
-require "cgi"
-
 module FilmAffinity
   class Search
     def initialize query
