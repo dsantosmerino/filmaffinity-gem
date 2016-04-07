@@ -18,5 +18,10 @@ describe "FilmAffinity::Movie" do
       expect(cast).to include(*expected_cast)
     end
 
+    it "#duration" do
+      duration = 103
+      expect(duration).to eq(movie.duration)
+    end
+
   end
 end
