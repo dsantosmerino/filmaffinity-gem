@@ -8,7 +8,7 @@ describe "FilmAffinity::Search" do
     subject(:search) { FilmAffinity::Search.new("truman") }
 
     it "#create_document_html" do
-      document_html = search.create_document_html
+      document_html = search.document_html
       expect(document_html).to be_an(Nokogiri::HTML::Document)
     end
 
@@ -38,12 +38,12 @@ describe "FilmAffinity::Search" do
 
     it "should parse id" do
       id = 504889
-      expect(id).to eq(search.parse_movie.id)
+      expect(id).to eq(search.movies.first.id)
     end
 
     it "should parse title" do
       title = "El show de Truman (Una vida en directo)  (1998)"
-      expect(title).to eq(search.parse_movie.title)
+      expect(title).to eq(search.movies.first.title)
     end
 
   end

@@ -1,7 +1,7 @@
 require "rspec/expectations"
 
 RSpec::Matchers.define :include_movie do |expected|
-  match do |actual|
-    actual.any? { |movie| expected.title == movie.title }
+  match do |movies|
+    movies.any? { |movie| movie.title == expected.title }
   end
 end
