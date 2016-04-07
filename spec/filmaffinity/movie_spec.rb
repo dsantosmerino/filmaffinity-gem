@@ -1,9 +1,9 @@
-require ".././spec_helper"
+require_relative "../spec_helper"
 
 describe "FilmAffinity::Movie" do
   describe "valid movie" do
     # Get The Truman Show (1998)
-    subject(:movie) { FilmAffinity::Movie.new("504889") }
+    subject(:movie) { FilmAffinity::Movie.new("504889", "El show de Truman (Una vida en directo)") }
 
     it "#cast" do
       cast = movie.cast
