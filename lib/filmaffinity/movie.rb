@@ -80,5 +80,9 @@ module FilmAffinity
       raw_rating = document_html.at('div[itemprop="ratingValue"]').content.strip
       raw_rating.gsub(",",".").to_f
     end
+
+    def poster
+      poster_url = document_html.at('img[itemprop="image"]')["src"]
+    end
   end
 end
