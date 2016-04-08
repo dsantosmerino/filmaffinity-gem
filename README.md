@@ -2,16 +2,22 @@
 
 ## Description
 
-The filmaffinity gem allows you to easy access publicly available data from Filmaffinity.com in spanish.
+The filmaffinity gem allows you to easy access publicly available data from **Filmaffinity.com in spanish**.
 
 ## Features
 
-- ```FilmAffinity::Search.new title``` Search movies for a title
-- ```FilmAffinity::Movie.new id, title``` Retrieve complete movie info
-- ```FilmAffinity::Top.new``` Retrieve the Top 30
-- ```FilmAffinity::Top.new options``` Retrieve the Top with the given options
+- Search movies for a title
+- Retrieve complete movie info
+- Retrieve the Top 30 of filmaffinity.com
+- Retrieve the Top with the given options
 
 ## Documentation
+
+##### FilmAffinity::Search
+Return an array of FilmAffinity::Movie, just containing preload ID and title.
+
+##### FilmAffinity::Movie
+Include some methods to retrieve the complete movie info.
 
 ##### FilmAffinity::Top options
 The options hash could include:
@@ -68,7 +74,7 @@ The options hash could include:
          <FilmAffinity::Movie>
          ...]
 
-    search.movies.first
+    top.movies.first
     #=> #<FilmAffinity::Movie>
 
     #Top FilmAffinity with options
@@ -84,7 +90,7 @@ The options hash could include:
          <FilmAffinity::Movie>
          ...]
 
-    search.movies.first
+    top.movies.first
     #=> #<FilmAffinity::Movie>
 
 ### Search:
