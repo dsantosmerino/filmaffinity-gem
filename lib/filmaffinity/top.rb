@@ -1,6 +1,6 @@
 module FilmAffinity
   class Top
-    def initialize options = nil
+    def initialize options = {}
       @options = options
     end
 
@@ -18,12 +18,10 @@ module FilmAffinity
 
     def query_options
       query_options = String.new
-      if @options
         query_options += "?"
         @options.each do |key,value|
           query_options += Constants.query_params[key] % value
         end
-      end
       query_options.gsub(/\&$/,"")
     end
 
