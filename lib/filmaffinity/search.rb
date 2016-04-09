@@ -4,6 +4,7 @@ module FilmAffinity
   class Search
     def initialize query
       @query = query
+      @json_parser = JsonMoviesParser.new
     end
 
     def movies
@@ -37,6 +38,10 @@ module FilmAffinity
         movies << movie
       end
       movies
+    end
+
+    def to_json
+      @json_parser.to_json movies
     end
 
   end

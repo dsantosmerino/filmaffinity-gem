@@ -4,6 +4,7 @@ module FilmAffinity
     def initialize id,title
       @id = id
       @title = title
+      @json_parser = JsonMovieParser.new
     end
 
     def document_html
@@ -83,6 +84,10 @@ module FilmAffinity
 
     def poster
       poster_url = document_html.at('img[itemprop="image"]')["src"]
+    end
+
+    def to_json
+      @json_parser.to_json self
     end
   end
 end

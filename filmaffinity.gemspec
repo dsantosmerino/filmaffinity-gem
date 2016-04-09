@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.homepage      = 'https://github.com/davidsantosmerino/filmaffinity-gem'
   s.license       = 'MIT'
   s.add_dependency 'nokogiri', ' ~> 1.6'
+  s.add_dependency 'json', ' ~> 1.8'
   s.add_development_dependency 'rake', '~> 10.0'
   s.add_development_dependency 'rspec', '~> 3.3'
 end
