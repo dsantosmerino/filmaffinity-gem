@@ -1,9 +1,9 @@
 module FilmAffinity
   class Movie
     attr_reader :id, :title
-    def initialize id,title
+    def initialize id, title = nil
       @id = id
-      @title = title
+      @title = title if title
       @json_parser = JsonMovieParser.new
     end
 
@@ -13,6 +13,10 @@ module FilmAffinity
 
     def generate_html
       open(Constants.urls[:movie] % id)
+    end
+
+    def title
+      @title ||= document_html.at('#main-title span').content.strip
     end
 
     def year

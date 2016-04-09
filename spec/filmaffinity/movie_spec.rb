@@ -2,6 +2,13 @@ require_relative "../spec_helper"
 
 describe "FilmAffinity::Movie" do
 
+  describe "#title" do
+    subject(:movie) { FilmAffinity::Movie.new(504889) }
+    it "should return an valid title when initializes with no title" do
+      expect(movie.title).to eq("El show de Truman (Una vida en directo)")
+    end
+  end
+
   describe "#rating" do
     subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
     it "should return an Float" do
