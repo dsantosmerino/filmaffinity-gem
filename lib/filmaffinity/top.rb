@@ -2,6 +2,7 @@ module FilmAffinity
   class Top
     def initialize options = {}
       @options = options
+      @json_parser = JsonMoviesParser.new
     end
 
     def movies
@@ -34,6 +35,10 @@ module FilmAffinity
         movies << movie
       end
       movies
+    end
+
+    def to_json
+      @json_parser.to_json movies
     end
 
   end
