@@ -1,4 +1,4 @@
-#FilmAffinity Scraper Gem
+# FilmAffinity Scraper Gem
 
 ## Description
 
@@ -10,6 +10,10 @@ The filmaffinity gem allows you to easy access publicly available data from **Fi
 - Retrieve complete movie info
 - Retrieve the Top 30 of filmaffinity.com
 - Retrieve the Top with the given options
+
+## REST API
+
+Also available as REST API at [heroku](https://filmaffinity-unofficial.herokuapp.com/).
 
 ## Documentation
 
@@ -128,7 +132,6 @@ The options hash could include:
          ...]
 
    movie.genres, movie.country, movie.sinopsis...
-
 
 ## Contributors
 
