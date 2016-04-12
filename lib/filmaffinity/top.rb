@@ -1,4 +1,5 @@
 
+require "pry"
 module FilmAffinity
   class Top
     def initialize options: {}, limit: 30
@@ -19,8 +20,7 @@ module FilmAffinity
       params = {'from' => from}
       url = URI.parse(Constants.urls[:top] % query_options)
       data = Net::HTTP.post_form(url, params)
-      
-      open(Constants.urls[:top] % query_options)
+      data.body
     end
 
     def query_options
@@ -42,18 +42,18 @@ module FilmAffinity
     def collect_from collection = [], from = 0, &block
       response = yield(from)
       collection += response
-      binding.pry
-      response.empty? || response.last.id >= @limit ? collection.flatten : collect_from(collection,response.last.id-1,&block)
+      response.empty? || response.last.positiontop >= @limit ? collection.flatten : collect_from(collection,response.last.positiontop,&block)
     end
 
 
     def parse_movies document_html
       movies = []
-      document_html.search(".movie-card.movie-card-1").each do |movie_card|
+      document_html.search(".movie-card.movie-card-1").each_with_index do |movie_card,index|
         id = movie_card["data-movie-id"].to_i
         title = movie_card.search(".mc-title a").first.content.strip
         movie = FilmAffinity::Movie.new id, title
-        movies << movie
+        movie.positiontop = document_html.search(".position")[index].content.to_i
+        movies << movie  
       end
       movies
     end

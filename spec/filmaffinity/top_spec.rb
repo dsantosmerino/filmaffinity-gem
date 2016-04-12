@@ -1,5 +1,5 @@
 require_relative "../spec_helper"
-
+require "pry"
 
 describe "FilmAffinity::Top" do
 
@@ -51,13 +51,18 @@ describe "FilmAffinity::Top" do
         end
         
       end
-      context "with limit" do
+      context "with limit 60" do
         limit = 60
         subject(:top) { FilmAffinity::Top.new limit:limit }
-        it "should include American History X" do
+        it "should include 'American History X'" do
           movies = top.movies
           american_history_x = FilmAffinity::Movie.new 261972, "American History X"
           expect(movies).to include_movie(american_history_x)
+        end
+        it "should NOT include 'Con la muerte en los talones'" do
+          movies = top.movies
+          con_la_muerte_en_los_talones = FilmAffinity::Movie.new 351704, "Con la muerte en los talones"
+          expect(movies).not_to include_movie(con_la_muerte_en_los_talones)
         end
       end
     end

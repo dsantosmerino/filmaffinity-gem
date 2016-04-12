@@ -1,10 +1,13 @@
+
 module FilmAffinity
   class Movie
     attr_reader :id, :title
+    attr_accessor :positiontop
     def initialize id, title = nil
       @id = id
       @title = title if title
       @json_parser = JsonMovieParser.new
+      @positiontop = nil
     end
 
     def document_html
@@ -76,6 +79,7 @@ module FilmAffinity
     def sinopsis
       document_html.at('dd[itemprop="description"]').content
     end
+
 
     def prizes
 
