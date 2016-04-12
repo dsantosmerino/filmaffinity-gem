@@ -1,5 +1,7 @@
+
 require "open-uri"
 require "nokogiri"
+
 
 require_relative "constants/constants"
 require_relative "filmaffinity/json-movies-parser"

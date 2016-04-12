@@ -1,19 +1,25 @@
+
 module FilmAffinity
   class Top
-    def initialize options = {}
+    def initialize options: {}, limit: 30
       @options = options
+      @limit = limit
       @json_parser = JsonMoviesParser.new
     end
 
     def movies
-      @movies ||= parse_movies
+      @movies = movies_with_limit
     end
 
-    def document_html
-      @document_html ||= Nokogiri::HTML(self.generate_html)
+    def document_html from
+      @document_html = Nokogiri::HTML(self.generate_html(from))
     end
 
-    def generate_html
+    def generate_html from
+      params = {'from' => from}
+      url = URI.parse(Constants.urls[:top] % query_options)
+      data = Net::HTTP.post_form(url, params)
+      
       open(Constants.urls[:top] % query_options)
     end
 
@@ -26,7 +32,22 @@ module FilmAffinity
       query_options.gsub(/\&$/,"")
     end
 
-    def parse_movies
+    def movies_with_limit
+      collect_from do |from|
+        doc_obj = document_html from
+        parse_movies doc_obj
+      end
+    end
+
+    def collect_from collection = [], from = 0, &block
+      response = yield(from)
+      collection += response
+      binding.pry
+      response.empty? || response.last.id >= @limit ? collection.flatten : collect_from(collection,response.last.id-1,&block)
+    end
+
+
+    def parse_movies document_html
       movies = []
       document_html.search(".movie-card.movie-card-1").each do |movie_card|
         id = movie_card["data-movie-id"].to_i
