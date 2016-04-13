@@ -49,7 +49,7 @@ describe "FilmAffinity::Top" do
           hijos_del_tercer_reich_movie = FilmAffinity::Movie.new 831118, "Hijos del Tercer Reich (TV)"
           expect(movies).to include_movie(hijos_del_tercer_reich_movie)
         end
-        
+
       end
       context "with limit 60" do
         limit = 60
@@ -63,6 +63,10 @@ describe "FilmAffinity::Top" do
           movies = top.movies
           con_la_muerte_en_los_talones = FilmAffinity::Movie.new 351704, "Con la muerte en los talones"
           expect(movies).not_to include_movie(con_la_muerte_en_los_talones)
+        end
+        it "should return 60 movies" do
+          movies = top.movies
+          expect(movies.size).to eq(60)
         end
       end
     end
