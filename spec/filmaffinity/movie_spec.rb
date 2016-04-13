@@ -107,7 +107,6 @@ describe "FilmAffinity::Movie" do
     end
   end
 
-
   describe "#poster" do
     subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
     it "should return a String" do

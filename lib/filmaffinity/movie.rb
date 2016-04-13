@@ -1,3 +1,4 @@
+
 module FilmAffinity
   class Movie
     attr_reader :id, :title
@@ -76,6 +77,7 @@ module FilmAffinity
     def sinopsis
       document_html.at('dd[itemprop="description"]').content
     end
+
 
     def prizes
 
