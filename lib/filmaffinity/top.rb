@@ -42,9 +42,9 @@ module FilmAffinity
     def collect_from collection = [], from = 0, &block
       response = yield(from)
       collection += response
-      response.empty? || response.last.positiontop >= @limit ? collection.flatten : collect_from(collection,response.last.positiontop,&block)
+      last_position = collection.size
+      response.empty? || last_position >= @limit ? collection.flatten : collect_from(collection,last_position,&block)
     end
-
 
     def parse_movies document_html
       movies = []
@@ -52,8 +52,7 @@ module FilmAffinity
         id = movie_card["data-movie-id"].to_i
         title = movie_card.search(".mc-title a").first.content.strip
         movie = FilmAffinity::Movie.new id, title
-        movie.positiontop = document_html.search(".position")[index].content.to_i
-        movies << movie  
+        movies << movie
       end
       movies
     end

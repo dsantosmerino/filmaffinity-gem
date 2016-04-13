@@ -107,16 +107,6 @@ describe "FilmAffinity::Movie" do
     end
   end
 
-  describe "#positiontop" do
-    limit = 60
-    subject(:top) { FilmAffinity::Top.new limit:limit }
-    it "should return the correct position from the top list" do
-      movie = top.movies[0]
-      expect(movie.positiontop).to eq(1)
-    end
-  end
-
-
   describe "#poster" do
     subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
     it "should return a String" do
