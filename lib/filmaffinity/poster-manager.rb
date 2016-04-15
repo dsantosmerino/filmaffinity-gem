@@ -3,21 +3,17 @@ require "imgur"
 
 
 class PosterManager
-  def initialize
-    #call config file to get id or put your own imgur id.
-    @client = Imgur.new("id")
-  end
-
-
   def load_poster(posterurl)
-    upload(posterurl)
+    return posterurl unless FilmAffinity.configuration.imgur_id
+    upload(posterurl, FilmAffinity.configuration.imgur_id)
   end
-  
-  def upload(posterurl)
+
+  def upload(posterurl, api_id)
+    imgur = Imgur.new(api_id)
     @dir = __dir__ + "/" + construct_name + ".jpg"
     save_img_locally(posterurl)
-    image = Imgur::LocalImage.new(@dir)
-    uploaded = @client.upload(image)
+    local_image = Imgur::LocalImage.new(@dir)
+    uploaded = imgur.upload(local_image)
     File.delete(@dir)
     uploaded.link
   end
