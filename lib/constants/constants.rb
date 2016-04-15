@@ -14,14 +14,14 @@ module Constants
   end
   def self.urls
     {
-      :top => "http://www.filmaffinity.com/es/topgen.php%s",
-      :search_by_title => "http://www.filmaffinity.com/es/search.php?stext=%s&stype=title",
-      :movie => "http://www.filmaffinity.com/es/film%i.html"
+      :top => "http://www.filmaffinity.com/#{self.lang}/topgen.php%s",
+      :search_by_title => "http://www.filmaffinity.com/#{self.lang}/search.php?stext=%s&stype=title",
+      :movie => "http://www.filmaffinity.com/#{self.lang}/film%i.html"
     }
   end
 
   def self.tags
-  
+
     {
 
       :title => { :EN => '#main-title span',
@@ -55,7 +55,7 @@ module Constants
       :script => {:EN => 'dt:contains("Screenwriter")',
                   :ES => 'dt:contains("Guión")'
       },
-      
+
       :photography => { :EN => 'dt:contains("Cinematography")',
                         :ES => 'dt:contains("Fotografía")'
       },
@@ -89,6 +89,10 @@ module Constants
   def self.tag(type)
     lang = FilmAffinity.configuration.language.to_sym
     Constants.tags[type][lang]
+  end
+
+  def self.lang
+    FilmAffinity.configuration.language.downcase
   end
 
 end
