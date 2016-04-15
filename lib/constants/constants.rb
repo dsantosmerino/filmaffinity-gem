@@ -16,4 +16,8 @@ module Constants
       :movie => "http://www.filmaffinity.com/es/film%i.html"
     }
   end
+
+  def self.english_tag
+  
+  end
 end
