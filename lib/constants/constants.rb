@@ -28,11 +28,11 @@ module Constants
                   :ES => '#main-title span'
       },
 
-      :year => { :EN => 'dd[itemprop="datePublished"]'
+      :year => { :EN => 'dd[itemprop="datePublished"]',
                 :ES => 'dd[itemprop="datePublished"]'
       },
 
-      :duration => { :EN => 'dd[itemprop="duration"]'
+      :duration => { :EN => 'dd[itemprop="duration"]',
                     :ES => 'dd[itemprop="duration"]'
       },
 
@@ -86,8 +86,8 @@ module Constants
     }
   end
 
-  def tag(type)
-    Constants.tags[type][lang]
+  def self.tag(type)
+    Constants.tags[type][:ES]
   end
 
 end

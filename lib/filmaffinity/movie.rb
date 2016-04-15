@@ -76,7 +76,7 @@ module FilmAffinity
     end
 
     def sinopsis
-      document_html.at(Constants.tag(:description)).content
+      document_html.at(Constants.tag(:sinopsis)).content
     end
 
 
