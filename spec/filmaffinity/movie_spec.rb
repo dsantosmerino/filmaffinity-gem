@@ -112,9 +112,14 @@ describe "FilmAffinity::Movie" do
     it "should return a String" do
       expect(movie.poster).to be_a(String)
     end
-    it "should return the correct img url" do
+    it "should return the correct filmaffinity url" do
       expect(movie.poster).to eq("http://pics.filmaffinity.com/El_show_de_Truman_Una_vida_en_directo-130091557-main.jpg")
     end
   end
+
+
+
+
+
 
 end

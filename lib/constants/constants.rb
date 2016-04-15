@@ -87,7 +87,8 @@ module Constants
   end
 
   def self.tag(type)
-    Constants.tags[type][:ES]
+    lang = FilmAffinity.configuration.language.to_sym
+    Constants.tags[type][lang]
   end
 
 end
