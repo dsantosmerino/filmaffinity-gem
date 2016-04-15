@@ -2,9 +2,6 @@ require "open-uri"
 require "imgur"
 
 
-
-
-
 class PosterManager
   def initialize
     #call config file to get id or put your own imgur id.
