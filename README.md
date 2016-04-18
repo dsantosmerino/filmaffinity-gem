@@ -1,19 +1,32 @@
 # FilmAffinity Scraper Gem
+[![Gem Version](https://badge.fury.io/rb/filmaffinity.svg)](http://badge.fury.io/rb/filmaffinity)
 
 ## Description
 
-The filmaffinity gem allows you to easy access publicly available data from **Filmaffinity.com in spanish**.
+The filmaffinity gem allows you to easy access publicly available data from **Filmaffinity.com in english and spanish**.
+
+Also available as **REST API** at [heroku](https://filmaffinity-unofficial.herokuapp.com/).
 
 ## Features
 
 - Search movies for a title
 - Retrieve complete movie info
-- Retrieve the Top 30 of filmaffinity.com
-- Retrieve the Top with the given options
+- Retrieve the Top N of filmaffinity.com
+- Retrieve the Top N with the given options
 
-## REST API
+## Installation
 
-Also available as REST API at [heroku](https://filmaffinity-unofficial.herokuapp.com/).
+Add this line to your application's Gemfile:
+
+    gem 'filmaffinity'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install filmaffinity
 
 ## Documentation
 

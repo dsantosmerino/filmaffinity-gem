@@ -43,7 +43,7 @@ module FilmAffinity
       response = yield(from)
       collection += response
       last_position = collection.size
-      response.empty? || last_position >= @limit ? collection.flatten : collect_from(collection,last_position,&block)
+      response.empty? || last_position >= @limit ? collection.flatten[0..@limit-1] : collect_from(collection,last_position,&block)
     end
 
     def parse_movies document_html
