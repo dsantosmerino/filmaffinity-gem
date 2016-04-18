@@ -29,6 +29,10 @@ describe "FilmAffinity::Top" do
           el_padrino_movie = FilmAffinity::Movie.new 809297, "El padrino"
           expect(movies).to include_movie(el_padrino_movie)
         end
+        it "should return 30 movies" do
+          movies = top.movies
+          expect(movies.size).to eq(30)
+        end
       end
       context "with options" do
         options = {
@@ -67,6 +71,22 @@ describe "FilmAffinity::Top" do
         it "should return 60 movies" do
           movies = top.movies
           expect(movies.size).to eq(60)
+        end
+      end
+      context "with limit 132" do
+        limit = 132
+        subject(:top) { FilmAffinity::Top.new limit:limit }
+        it "should return 132 movies" do
+          movies = top.movies
+          expect(movies.size).to eq(132)
+        end
+      end
+      context "with limit 10" do
+        limit = 10
+        subject(:top) { FilmAffinity::Top.new limit:limit }
+        it "should return 10 movies" do
+          movies = top.movies
+          expect(movies.size).to eq(10)
         end
       end
     end

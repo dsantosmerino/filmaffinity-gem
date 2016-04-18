@@ -112,8 +112,8 @@ describe "FilmAffinity::Movie" do
       it "should return a String" do
         expect(movie.poster).to be_a(String)
       end
-      it "should return the correct filmaffinity url" do
-        expect(movie.poster).to eq("http://pics.filmaffinity.com/The_Truman_Show-130091557-main.jpg")
+      it "should return a .jpg address" do
+        expect(movie.poster).to include(".jpg")
       end
     end
   end
@@ -235,8 +235,8 @@ context "spanish version" do
       it "should return a String" do
         expect(movie.poster).to be_a(String)
       end
-      it "should return the correct filmaffinity url" do
-        expect(movie.poster).to eq("http://pics.filmaffinity.com/El_show_de_Truman_Una_vida_en_directo-130091557-main.jpg")
+      it "should return a .jpg address" do
+        expect(movie.poster).to include(".jpg")
       end
     end
   end

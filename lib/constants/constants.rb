@@ -1,7 +1,5 @@
 module Constants
 
-
-
   def self.query_params
     {
       :genre => "genre=%s&",
@@ -12,6 +10,7 @@ module Constants
       :no_tv => "notvse&",
     }
   end
+
   def self.urls
     {
       :top => "http://www.filmaffinity.com/#{self.lang}/topgen.php%s",
@@ -21,7 +20,6 @@ module Constants
   end
 
   def self.tags
-
     {
 
       :title => { :EN => '#main-title span',
@@ -29,11 +27,11 @@ module Constants
       },
 
       :year => { :EN => 'dd[itemprop="datePublished"]',
-                :ES => 'dd[itemprop="datePublished"]'
+                  :ES => 'dd[itemprop="datePublished"]'
       },
 
       :duration => { :EN => 'dd[itemprop="duration"]',
-                    :ES => 'dd[itemprop="duration"]'
+                      :ES => 'dd[itemprop="duration"]'
       },
 
       :country => { :EN => '#country-img',
@@ -41,7 +39,7 @@ module Constants
       },
 
       :director => { :EN => 'a[itemprop="url"]',
-                    :ES => 'a[itemprop="url"]'
+                      :ES => 'a[itemprop="url"]'
       },
 
       :music => { :EN => 'dt:contains("Music")',
@@ -81,8 +79,13 @@ module Constants
       },
 
       :poster => { :EN => 'img[itemprop="image"]',
-                  :ES => 'img[itemprop="image"]'
+                    :ES => 'img[itemprop="image"]'
+      },
+
+      :poster_big => { :EN => 'a[class="lightbox"]',
+                        :ES => 'a[class="lightbox"]'
       }
+
     }
   end
 

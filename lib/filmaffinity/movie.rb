@@ -94,6 +94,11 @@ module FilmAffinity
       @poster_manager.load_poster(poster_url)
     end
 
+    def poster_big
+      poster_url = document_html.at(Constants.tag(:poster_big))["href"]
+      @poster_manager.load_poster(poster_url)
+    end
+
     def to_json
       @json_parser.to_json self
     end
