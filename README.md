@@ -30,6 +30,15 @@ Or install it yourself as:
 
 ## Documentation
 
+##### FilmAffinity configuration
+FilmAffinity has some configuration options, which you can configure globally before your requests. Could include an ```imgur_id``` to upload the posters on Imgur and avoid forbidden hotlinking from filmaffinity. Also you can change the ```language```, english by default. 
+```
+FilmAffinity.configure do |config|
+  config.imgur_id = "Your-imgur-client-id"
+  config.language = "ES"
+end
+```
+
 ##### FilmAffinity::Search
 Return an array of FilmAffinity::Movie, just containing preload ID and title.
 
