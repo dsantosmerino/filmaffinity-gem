@@ -1,7 +1,6 @@
 require "open-uri"
 require "imgur"
 
-
 class PosterManager
   def load_poster(posterurl)
     return posterurl unless FilmAffinity.configuration.imgur_id
@@ -19,11 +18,11 @@ class PosterManager
   end
 
   def save_img_locally(posterurl)
-    open(posterurl) {|f|
-      File.open(@dir,"wb") do |file|
+    open(posterurl) do |f|
+      File.open(@dir, "wb") do |file|
         file.puts f.read
       end
-    }
+    end
   end
 
   def construct_name

@@ -1,8 +1,7 @@
-
 module FilmAffinity
   class Movie
     attr_reader :id, :title
-    def initialize id, title = nil
+    def initialize(id, title = nil)
       @id = id
       @title = title if title
       @json_parser = JsonMovieParser.new
@@ -10,7 +9,7 @@ module FilmAffinity
     end
 
     def document_html
-      @document_html ||= Nokogiri::HTML(self.generate_html)
+      @document_html ||= Nokogiri::HTML(generate_html)
     end
 
     def generate_html
@@ -52,14 +51,14 @@ module FilmAffinity
     end
 
     def photography
-      document_html.at((Constants.tag(:photography))).next_sibling.next_sibling.content
+      document_html.at(Constants.tag(:photography)).next_sibling.next_sibling.content
     end
 
     def cast
       actors = []
-      node = document_html.search((Constants.tag(:cast)))
+      node = document_html.search(Constants.tag(:cast))
       node.each do |actor|
-        actors << actor.at((Constants.tag(:cast_each))).content.strip
+        actors << actor.at(Constants.tag(:cast_each)).content.strip
       end
       actors
     end
@@ -72,21 +71,18 @@ module FilmAffinity
         genres << raw_genre.content.strip
       end
       genres
-
     end
 
     def sinopsis
       document_html.at(Constants.tag(:sinopsis)).content
     end
 
-
     def prizes
-
     end
 
     def rating
       raw_rating = document_html.at(Constants.tag(:rating)).content.strip
-      raw_rating.gsub(",",".").to_f
+      raw_rating.tr(",", ".").to_f
     end
 
     def poster
