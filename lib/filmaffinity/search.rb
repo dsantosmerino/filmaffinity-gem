@@ -2,7 +2,7 @@ require "cgi"
 
 module FilmAffinity
   class Search
-    def initialize query
+    def initialize(query)
       @query = query
       @json_parser = JsonMoviesParser.new
     end
@@ -16,7 +16,7 @@ module FilmAffinity
     end
 
     def document_html
-      @document_html ||= Nokogiri::HTML(self.generate_html)
+      @document_html ||= Nokogiri::HTML(generate_html)
     end
 
     def generate_html
@@ -26,7 +26,7 @@ module FilmAffinity
     def parse_movie
       id    = document_html.at('meta[property="og:url"]')['content'][/\d+/].to_i
       title = document_html.at('meta[property="og:title"]')['content']
-      [FilmAffinity::Movie.new(id,title)]
+      [FilmAffinity::Movie.new(id, title)]
     end
 
     def parse_movies
@@ -43,6 +43,5 @@ module FilmAffinity
     def to_json
       @json_parser.to_json movies
     end
-
   end
 end

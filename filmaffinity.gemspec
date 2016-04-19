@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'filmaffinity'
-  s.version     = '0.3.0'
-  s.date        = '2016-04-18'
+  s.version     = '0.3.1'
+  s.date        = '2016-04-19'
   s.summary     = "filmaffinity"
   s.description = "Easily use Ruby or the command line to find information on Filmaffinity.com"
   s.authors     = ["David Santos", "Oriol Bellido"]
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
   s.add_dependency 'nokogiri', ' ~> 1.6'
   s.add_dependency 'json', ' ~> 1.8'
-  s.add_dependency 'imgur-api'
+  s.add_dependency 'imgur-api', '~> 0'
   s.add_development_dependency 'rake', '~> 10.0'
   s.add_development_dependency 'rspec', '~> 3.3'
 end

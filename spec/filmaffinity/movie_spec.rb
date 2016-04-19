@@ -3,21 +3,21 @@ require_relative "../spec_helper"
 describe "FilmAffinity::Movie" do
   context "english version" do
     describe "#title" do
-      subject(:movie) { FilmAffinity::Movie.new(504889) }
+      subject(:movie) { FilmAffinity::Movie.new(504_889) }
       it "should return an valid title when initializes with no title" do
         expect(movie.title).to eq("The Truman Show")
       end
     end
 
     describe "#rating" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return an Float" do
         expect(movie.rating).to be_a(Float)
       end
     end
 
     describe "#year" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return an Fixnum" do
         expect(movie.year).to be_an(Fixnum)
       end
@@ -27,7 +27,7 @@ describe "FilmAffinity::Movie" do
     end
 
     describe "#duration" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return an Fixnum" do
         expect(movie.duration).to be_a(Fixnum)
       end
@@ -37,7 +37,7 @@ describe "FilmAffinity::Movie" do
     end
 
     describe "#country" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return a String" do
         expect(movie.country).to be_a(String)
       end
@@ -47,7 +47,7 @@ describe "FilmAffinity::Movie" do
     end
 
     describe "#director" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return a String" do
         expect(movie.director).to be_a(String)
       end
@@ -57,7 +57,7 @@ describe "FilmAffinity::Movie" do
     end
 
     describe "#script" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return a String" do
         expect(movie.script).to be_a(String)
       end
@@ -67,7 +67,7 @@ describe "FilmAffinity::Movie" do
     end
 
     describe "#cast" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return an Array" do
         expect(movie.cast).to be_an(Array)
       end
@@ -83,7 +83,7 @@ describe "FilmAffinity::Movie" do
     end
 
     describe "#company" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return a String" do
         expect(movie.company).to be_a(String)
       end
@@ -93,7 +93,7 @@ describe "FilmAffinity::Movie" do
     end
 
     describe "#genres" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return an Array" do
         expect(movie.genres).to be_an(Array)
       end
@@ -108,7 +108,7 @@ describe "FilmAffinity::Movie" do
     end
 
     describe "#poster" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return a String" do
         expect(movie.poster).to be_a(String)
       end
@@ -118,7 +118,7 @@ describe "FilmAffinity::Movie" do
     end
   end
 
-context "spanish version" do
+  context "spanish version" do
     before :all do
       FilmAffinity.configure do |config|
         config.language = "ES"
@@ -126,21 +126,21 @@ context "spanish version" do
     end
 
     describe "#title" do
-      subject(:movie) { FilmAffinity::Movie.new(504889) }
+      subject(:movie) { FilmAffinity::Movie.new(504_889) }
       it "should return an valid title when initializes with no title" do
         expect(movie.title).to eq("El show de Truman (Una vida en directo)")
       end
     end
 
     describe "#rating" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return an Float" do
         expect(movie.rating).to be_a(Float)
       end
     end
 
     describe "#year" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return an Fixnum" do
         expect(movie.year).to be_an(Fixnum)
       end
@@ -150,7 +150,7 @@ context "spanish version" do
     end
 
     describe "#duration" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return an Fixnum" do
         expect(movie.duration).to be_a(Fixnum)
       end
@@ -160,7 +160,7 @@ context "spanish version" do
     end
 
     describe "#country" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return a String" do
         expect(movie.country).to be_a(String)
       end
@@ -170,7 +170,7 @@ context "spanish version" do
     end
 
     describe "#director" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return a String" do
         expect(movie.director).to be_a(String)
       end
@@ -180,7 +180,7 @@ context "spanish version" do
     end
 
     describe "#script" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return a String" do
         expect(movie.script).to be_a(String)
       end
@@ -190,7 +190,7 @@ context "spanish version" do
     end
 
     describe "#cast" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return an Array" do
         expect(movie.cast).to be_an(Array)
       end
@@ -206,7 +206,7 @@ context "spanish version" do
     end
 
     describe "#company" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return a String" do
         expect(movie.company).to be_a(String)
       end
@@ -216,7 +216,7 @@ context "spanish version" do
     end
 
     describe "#genres" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return an Array" do
         expect(movie.genres).to be_an(Array)
       end
@@ -231,7 +231,7 @@ context "spanish version" do
     end
 
     describe "#poster" do
-      subject(:movie) { FilmAffinity::Movie.new(504889, "El show de Truman (Una vida en directo)") }
+      subject(:movie) { FilmAffinity::Movie.new(504_889, "El show de Truman (Una vida en directo)") }
       it "should return a String" do
         expect(movie.poster).to be_a(String)
       end
