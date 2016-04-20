@@ -31,7 +31,7 @@ Or install it yourself as:
 ## Documentation
 
 ##### FilmAffinity configuration
-FilmAffinity has some configuration options, which you can configure globally before your requests. Could include an ```imgur_id``` to upload the posters on Imgur and avoid forbidden hotlinking from filmaffinity. Also you can change the ```language```, english by default. 
+FilmAffinity has some configuration options, which you can configure globally before your requests. Could include an ```imgur_id``` to upload the posters on Imgur and avoid forbidden hotlinking from filmaffinity. Also you can change the ```language```, english by default.
 ```
 FilmAffinity.configure do |config|
   config.imgur_id = "Your-imgur-client-id"
@@ -103,12 +103,12 @@ The options hash could include:
     top.movies.first
     #=> #<FilmAffinity::Movie>
 
-    #Top FilmAffinity with options
+    #Top FilmAffinity with options and number of results
     options = {
       :genre => "AN",
       :no_tv => true
     }
-    top = FilmAffinity::Top.new options
+    top = FilmAffinity::Top.new options, 20
 
     top.movies
     #=> [<FilmAffinity::Movie>
