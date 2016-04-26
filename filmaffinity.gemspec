@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'filmaffinity'
-  s.version     = '0.3.1'
-  s.date        = '2016-04-19'
+  s.version     = '1.0.0'
+  s.date        = '2016-04-26'
   s.summary     = 'filmaffinity'
   s.description = 'Easily use Ruby or the command line to find information on Filmaffinity.com'
   s.authors     = ['David Santos', 'Oriol Bellido']
