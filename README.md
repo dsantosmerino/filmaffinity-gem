@@ -5,11 +5,11 @@
 
 The filmaffinity gem allows you to easy access publicly available data from **Filmaffinity.com in english and spanish**.
 
-Also available as **REST API** at [heroku](https://filmaffinity-unofficial.herokuapp.com/).
+It is also available as **RESTful API** at [heroku](https://filmaffinity-unofficial.herokuapp.com/).
 
 ## Features
 
-- Search movies for a title
+- Search movies by title
 - Retrieve complete movie info
 - Retrieve the Top N of filmaffinity.com
 - Retrieve the Top N with the given options
@@ -22,7 +22,7 @@ Add this line to your application's Gemfile:
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
@@ -31,7 +31,7 @@ Or install it yourself as:
 ## Documentation
 
 ##### FilmAffinity configuration
-FilmAffinity has some configuration options, which you can configure globally before your requests. Could include an ```imgur_id``` to upload the posters on Imgur and avoid forbidden hotlinking from filmaffinity. Also you can change the ```language```, english by default. 
+FilmAffinity has some configuration options, which you can configure globally before your requests. Could include an ```imgur_id``` to upload the posters on Imgur and avoid forbidden hotlinking from filmaffinity. Also you can change the ```language```, english by default.
 ```
 FilmAffinity.configure do |config|
   config.imgur_id = "Your-imgur-client-id"
@@ -103,12 +103,12 @@ The options hash could include:
     top.movies.first
     #=> #<FilmAffinity::Movie>
 
-    #Top FilmAffinity with options
+    #Top FilmAffinity with options and number of results
     options = {
       :genre => "AN",
       :no_tv => true
     }
-    top = FilmAffinity::Top.new options
+    top = FilmAffinity::Top.new options, 20
 
     top.movies
     #=> [<FilmAffinity::Movie>
@@ -152,8 +152,6 @@ The options hash could include:
          "Robert Duvall",
          "Diane Keaton",
          ...]
-
-   movie.genres, movie.country, movie.sinopsis...
 
 ## Contributors
 
