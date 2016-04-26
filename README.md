@@ -3,7 +3,7 @@
 
 ## Description
 
-The filmaffinity gem allows you to easy access publicly available data from **Filmaffinity.com in english and spanish**.
+The filmaffinity gem allows you to easily access publicly available data from **Filmaffinity.com in english and spanish**.
 
 It is also available as **RESTful API** at [heroku](https://filmaffinity-unofficial.herokuapp.com/).
 
@@ -31,7 +31,7 @@ Or install it yourself as:
 ## Documentation
 
 ##### FilmAffinity configuration
-FilmAffinity has some configuration options, which you can configure globally before your requests. Could include an ```imgur_id``` to upload the posters on Imgur and avoid forbidden hotlinking from filmaffinity. Also you can change the ```language```, english by default.
+FilmAffinity offers some configuration options, which you can configure globally before your requests. You could include an ```imgur_id``` to upload the posters on Imgur and avoid forbidden hotlinking from filmaffinity. You can also change the ```language```,which is english by default.
 ```
 FilmAffinity.configure do |config|
   config.imgur_id = 'Your-imgur-client-id'
@@ -40,13 +40,13 @@ end
 ```
 
 ##### FilmAffinity::Search
-Return an array of FilmAffinity::Movie, just containing preload ID and title.
+Returns an array of FilmAffinity::Movie, containing preload ID and title.
 
 ##### FilmAffinity::Movie
-Include some methods to retrieve the complete movie info.
+Includes some methods to retrieve the complete movie info.
 
 ##### FilmAffinity::Top options
-The options hash could include:
+The options hash accepts several parameters:
 ```
 {
   :genre => 'AC',
