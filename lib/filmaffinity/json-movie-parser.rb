@@ -11,7 +11,8 @@ class JsonMovieParser
       'country' => movie.country,
       'script' => movie.script,
       'cast' => movie.cast,
-      'sinopsis' => movie.sinopsis
+      'sinopsis' => movie.sinopsis,
+      'poster_big' => movie.poster_big
     }
   end
 
