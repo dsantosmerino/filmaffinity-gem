@@ -1,4 +1,5 @@
 module FilmAffinity
+  # Class Top
   class Top
     def initialize(options: {}, limit: 30)
       @options = options
@@ -15,7 +16,7 @@ module FilmAffinity
     end
 
     def generate_html(from)
-      params = {'from' => from}
+      params = { 'from' => from }
       url = URI.parse(Constants.urls[:top] % query_options)
       data = Net::HTTP.post_form(url, params)
       data.body
@@ -23,11 +24,11 @@ module FilmAffinity
 
     def query_options
       query_options = ''
-      query_options += "?"
+      query_options += '?'
       @options.each do |key, value|
         query_options += Constants.query_params[key] % value
       end
-      query_options.gsub(/\&$/, "")
+      query_options.gsub(/\&$/, '')
     end
 
     def movies_with_limit
@@ -46,9 +47,9 @@ module FilmAffinity
 
     def parse_movies(document_html)
       movies = []
-      document_html.search(".movie-card.movie-card-1").each_with_index do |movie_card, _index|
-        id = movie_card["data-movie-id"].to_i
-        title = movie_card.search(".mc-title a").first.content.strip
+      document_html.search('.movie-card.movie-card-1').each_with_index do |movie_card, _index|
+        id = movie_card['data-movie-id'].to_i
+        title = movie_card.search('.mc-title a').first.content.strip
         movie = FilmAffinity::Movie.new id, title
         movies << movie
       end

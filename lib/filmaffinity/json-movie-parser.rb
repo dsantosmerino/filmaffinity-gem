@@ -1,17 +1,17 @@
-require "json"
+require 'json'
 
 class JsonMovieParser
   def to_hash(movie)
     {
-      "title" => movie.title,
-      "rating" => movie.rating,
-      "director" => movie.director,
-      "year" => movie.year,
-      "duration" => movie.duration,
-      "country" => movie.country,
-      "script" => movie.script,
-      "cast" => movie.cast,
-      "sinopsis" => movie.sinopsis
+      'title' => movie.title,
+      'rating' => movie.rating,
+      'director' => movie.director,
+      'year' => movie.year,
+      'duration' => movie.duration,
+      'country' => movie.country,
+      'script' => movie.script,
+      'cast' => movie.cast,
+      'sinopsis' => movie.sinopsis
     }
   end
 

@@ -34,8 +34,8 @@ Or install it yourself as:
 FilmAffinity has some configuration options, which you can configure globally before your requests. Could include an ```imgur_id``` to upload the posters on Imgur and avoid forbidden hotlinking from filmaffinity. Also you can change the ```language```, english by default. 
 ```
 FilmAffinity.configure do |config|
-  config.imgur_id = "Your-imgur-client-id"
-  config.language = "ES"
+  config.imgur_id = 'Your-imgur-client-id'
+  config.language = 'ES'
 end
 ```
 
@@ -49,8 +49,8 @@ Include some methods to retrieve the complete movie info.
 The options hash could include:
 ```
 {
-  :genre => "AC",
-  :country => "DE",
+  :genre => 'AC',
+  :country => 'DE',
   :from_year => 2014,
   :to_year => 2016,
   :no_doc => true,
@@ -58,25 +58,25 @@ The options hash could include:
 }
   ```
 ##### :genre
-- "AC"    Action
-- "AV"    Adventure
-- "AN"    Animation
-- "CO"    Comedy
-- "DO"    Documentary
-- "DR"    Drama
-- "FAN"   Fantasy
-- "F-N"   Film-Noir
-- "TE"    Horror
-- "INF"   Kids
-- "MU"    Musical
-- "INT"   Mystery
-- "RO"    Romance
-- "C-F"   Sci-Fi
-- "TH"    Thriller
-- "TV_SE" TV Series
-- "DESC"  Unknown
-- "BE"    War
-- "WE"    Western
+- 'AC'    Action
+- 'AV'    Adventure
+- 'AN'    Animation
+- 'CO'    Comedy
+- 'DO'    Documentary
+- 'DR'    Drama
+- 'FAN'   Fantasy
+- 'F-N'   Film-Noir
+- 'TE'    Horror
+- 'INF'   Kids
+- 'MU'    Musical
+- 'INT'   Mystery
+- 'RO'    Romance
+- 'C-F'   Sci-Fi
+- 'TH'    Thriller
+- 'TV_SE' TV Series
+- 'DESC'  Unknown
+- 'BE'    War
+- 'WE'    Western
 
 ##### :country
 2-letter code supplied by the ISO
@@ -105,7 +105,7 @@ The options hash could include:
 
     #Top FilmAffinity with options
     options = {
-      :genre => "AN",
+      :genre => 'AN',
       :no_tv => true
     }
     top = FilmAffinity::Top.new options
@@ -121,7 +121,7 @@ The options hash could include:
 
 ### Search:
 
-    search = FilmAffinity::Search.new("Padrino")
+    search = FilmAffinity::Search.new('Padrino')
 
     search.movies
     #=> [<FilmAffinity::Movie>
@@ -134,10 +134,10 @@ The options hash could include:
 
 ### Movie:
 
-    movie = FilmAffinity::Movie.new(809297, "El Padrino")
+    movie = FilmAffinity::Movie.new(809297, 'El Padrino')
 
     movie.director
-    #=> "Francis Ford Coppola"
+    #=> 'Francis Ford Coppola'
 
     movie.year
     #=> 1972
@@ -146,11 +146,11 @@ The options hash could include:
     #=> 9.1
 
     movie.cast
-    #=> ["Marlon Brando",
-         "Al Pacino",
-         "James Caan",
-         "Robert Duvall",
-         "Diane Keaton",
+    #=> ['Marlon Brando',
+         'Al Pacino',
+         'James Caan',
+         'Robert Duvall',
+         'Diane Keaton',
          ...]
 
    movie.genres, movie.country, movie.sinopsis...

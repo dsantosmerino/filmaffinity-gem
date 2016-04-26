@@ -1,5 +1,5 @@
-require "open-uri"
-require "imgur"
+require 'open-uri'
+require 'imgur'
 
 class PosterManager
   def load_poster(posterurl)
@@ -9,7 +9,7 @@ class PosterManager
 
   def upload(posterurl, api_id)
     imgur = Imgur.new(api_id)
-    @dir = __dir__ + "/" + construct_name + ".jpg"
+    @dir = __dir__ + '/' + construct_name + '.jpg'
     save_img_locally(posterurl)
     local_image = Imgur::LocalImage.new(@dir)
     uploaded = imgur.upload(local_image)
@@ -19,7 +19,7 @@ class PosterManager
 
   def save_img_locally(posterurl)
     open(posterurl) do |f|
-      File.open(@dir, "wb") do |file|
+      File.open(@dir, 'wb') do |file|
         file.puts f.read
       end
     end

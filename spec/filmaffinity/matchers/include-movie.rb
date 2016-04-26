@@ -1,4 +1,4 @@
-require "rspec/expectations"
+require 'rspec/expectations'
 
 RSpec::Matchers.define :include_movie do |expected|
   match do |movies|

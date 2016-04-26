@@ -1,6 +1,7 @@
-require "cgi"
+require 'cgi'
 
 module FilmAffinity
+  # Class Search
   class Search
     def initialize(query)
       @query = query
@@ -12,7 +13,7 @@ module FilmAffinity
     end
 
     def exact_match?
-      !document_html.at(".z-movie").nil?
+      !document_html.at('.z-movie').nil?
     end
 
     def document_html
@@ -31,9 +32,9 @@ module FilmAffinity
 
     def parse_movies
       movies = []
-      document_html.search(".movie-card.movie-card-1").each do |movie_card|
-        id = movie_card["data-movie-id"].to_i
-        title = movie_card.search(".mc-title a").first.content.strip
+      document_html.search('.movie-card.movie-card-1').each do |movie_card|
+        id = movie_card['data-movie-id'].to_i
+        title = movie_card.search('.mc-title a').first.content.strip
         movie = FilmAffinity::Movie.new id, title
         movies << movie
       end

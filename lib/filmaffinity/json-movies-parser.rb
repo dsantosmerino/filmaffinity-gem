@@ -3,8 +3,8 @@ class JsonMoviesParser
     hashes = []
     movies.each do |movie|
       hash = {
-        "id" => movie.id,
-        "title" => movie.title
+        'id' => movie.id,
+        'title' => movie.title
       }
       hashes << hash
     end
