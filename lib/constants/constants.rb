@@ -6,7 +6,7 @@ module Constants
       from_year: 'fromyear=%i&',
       to_year: 'toyear=%i&',
       no_doc: 'nodoc&',
-      no_tv: 'notvse&',
+      no_tv: 'notvse&'
     }
   end
 
@@ -42,7 +42,7 @@ module Constants
       },
 
       music: { EN: 'dt:contains("Music")',
-               ES: 'dt:contains("Música")'
+               ES: 'dt:contains("Music")'
       },
 
       company: { EN: 'dt:contains("Producer")',

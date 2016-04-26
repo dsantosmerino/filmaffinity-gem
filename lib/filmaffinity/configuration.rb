@@ -4,6 +4,6 @@ class Configuration
 
   def initialize
     @imgur_id = nil
-    @language = "EN"
+    @language = 'EN'
   end
 end
