@@ -1,4 +1,5 @@
 # FilmAffinity Scraper Gem
+[![Build Status](https://travis-ci.org/davidsantosmerino/filmaffinity.png?branch=master)](https://travis-ci.org/davidsantosmerino/filmaffinity)
 [![Gem Version](https://badge.fury.io/rb/filmaffinity.svg)](http://badge.fury.io/rb/filmaffinity)
 
 ## Description
