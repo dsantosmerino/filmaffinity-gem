@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
   s.name        = 'filmaffinity'
-  s.version     = '1.1.0'
-  s.date        = '2016-04-26'
+  s.version     = '1.1.1'
+  s.date        = '2017-04-11'
   s.summary     = 'filmaffinity'
   s.description = 'Easily use Ruby or the command line to find information on Filmaffinity.com'
   s.authors     = ['David Santos', 'Oriol Bellido']
-  s.email       = 'dsantosmerino92@gmail.com'
+  s.email       = 'dsantosmerino@gmail.com'
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
