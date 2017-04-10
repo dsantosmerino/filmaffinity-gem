@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    filmaffinity (1.1.0)
+    filmaffinity (1.1.1)
       imgur-api (~> 0)
       json (~> 1.8)
       nokogiri (~> 1.6)
@@ -11,17 +11,16 @@ GEM
   specs:
     coderay (1.1.1)
     diff-lcs (1.2.5)
-    httparty (0.13.7)
-      json (~> 1.8)
+    httparty (0.14.0)
       multi_xml (>= 0.5.2)
     imgur-api (0.0.4)
       httparty
-    json (1.8.3)
+    json (1.8.6)
     method_source (0.8.2)
-    mini_portile2 (2.0.0)
-    multi_xml (0.5.5)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    mini_portile2 (2.1.0)
+    multi_xml (0.6.0)
+    nokogiri (1.7.1)
+      mini_portile2 (~> 2.1.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -54,4 +53,4 @@ DEPENDENCIES
   rspec (~> 3.3)
 
 BUNDLED WITH
-   1.11.2
+   1.13.6

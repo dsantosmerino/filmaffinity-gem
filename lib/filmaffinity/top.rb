@@ -47,7 +47,7 @@ module FilmAffinity
 
     def parse_movies(document_html)
       movies = []
-      document_html.search('.movie-card.movie-card-1').each_with_index do |movie_card, _index|
+      document_html.search('.movie-card.movie-card-0').each_with_index do |movie_card, _index|
         id = movie_card['data-movie-id'].to_i
         title = movie_card.search('.mc-title a').first.content.strip
         movie = FilmAffinity::Movie.new id, title

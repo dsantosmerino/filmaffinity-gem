@@ -50,7 +50,7 @@ module Constants
       },
 
       script: { EN: 'dt:contains("Screenwriter")',
-                ES: 'dt:contains("Guión")'
+                ES: 'dt:contains("Guion")'
       },
 
       photography: { EN: 'dt:contains("Cinematography")',
