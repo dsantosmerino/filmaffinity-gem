@@ -12,9 +12,9 @@ module Constants
 
   def self.urls
     {
-      top: "http://www.filmaffinity.com/#{lang}/topgen.php%s",
-      search_by_title: "http://www.filmaffinity.com/#{lang}/search.php?stext=%s&stype=title",
-      movie: "http://www.filmaffinity.com/#{lang}/film%i.html"
+      top: "https://www.filmaffinity.com/#{lang}/topgen.php%s",
+      search_by_title: "https://www.filmaffinity.com/#{lang}/search.php?stext=%s&stype=title",
+      movie: "https://www.filmaffinity.com/#{lang}/film%i.html"
     }
   end
 
