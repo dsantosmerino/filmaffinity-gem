@@ -45,9 +45,9 @@ describe 'FilmAffinity::Top' do
         movies = top.movies
         movies.each { |movie| expect(movie).to be_an(FilmAffinity::Movie) }
       end
-      it 'should include "Hijos del Tercer Reich (TV)"' do
+      it 'should include "Hijos del Tercer Reich (Miniserie de TV)"' do
         movies = top.movies
-        hijos = FilmAffinity::Movie.new(831_118, 'Hijos del Tercer Reich (TV)')
+        hijos = FilmAffinity::Movie.new(831_118, 'Hijos del Tercer Reich (Miniserie de TV)')
         expect(movies).to include_movie(hijos)
       end
     end
