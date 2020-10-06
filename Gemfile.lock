@@ -3,7 +3,7 @@ PATH
   specs:
     filmaffinity (1.1.2)
       imgur-api (~> 0)
-      json (~> 1.8)
+      json (>= 1.8, < 3.0)
       nokogiri (>= 1.8.1)
 
 GEM
@@ -11,11 +11,15 @@ GEM
   specs:
     ast (2.4.1)
     diff-lcs (1.2.5)
-    httparty (0.16.2)
+    httparty (0.18.1)
+      mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
     imgur-api (0.0.4)
       httparty
-    json (1.8.6)
+    json (2.3.1)
+    mime-types (3.3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2020.0512)
     mini_portile2 (2.4.0)
     multi_xml (0.6.0)
     nokogiri (1.10.10)
