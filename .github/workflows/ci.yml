@@ -1,0 +1,34 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    name: Rubocop
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby 2.7
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+    - name: Install dependencies
+      run: gem install rubocop
+    - name: Rubocop
+      run: rubocop
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby: [ '2.5', '2.6', '2.7' ]
+    name: Test w/ Ruby ${{ matrix.ruby }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby ${{ matrix.ruby }}
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+    - name: RSpec
+      run: bundle exec rspec

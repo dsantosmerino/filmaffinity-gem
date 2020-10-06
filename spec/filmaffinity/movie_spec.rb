@@ -105,8 +105,8 @@ describe 'FilmAffinity::Movie' do
       it 'should return a String' do
         expect(movie.company).to be_a(String)
       end
-      it 'should return "Paramount Pictures / Scott Rudin Productions"' do
-        expect(movie.company).to eq('Paramount Pictures / Scott Rudin Productions')
+      it 'should return "Paramount Pictures, Scott Rudin Productions"' do
+        expect(movie.company).to eq('Paramount Pictures, Scott Rudin Productions')
       end
     end
 
@@ -246,8 +246,8 @@ describe 'FilmAffinity::Movie' do
       it 'should return a String' do
         expect(movie.company).to be_a(String)
       end
-      it 'should return "Paramount Pictures / Scott Rudin Productions"' do
-        expect(movie.company).to eq('Paramount Pictures / Scott Rudin Productions')
+      it 'should return "Paramount Pictures, Scott Rudin Productions"' do
+        expect(movie.company).to eq('Paramount Pictures, Scott Rudin Productions')
       end
     end
 
