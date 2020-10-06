@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require 'cgi'
 
 module FilmAffinity
@@ -5,7 +7,6 @@ module FilmAffinity
   class Search
     def initialize(query)
       @query = query
-      @json_parser = JsonMoviesParser.new
     end
 
     def movies
@@ -21,7 +22,7 @@ module FilmAffinity
     end
 
     def generate_html
-      open(Constants.urls[:search_by_title] % CGI.escape(@query))
+      URI.open(Constants.urls[:search_by_title] % CGI.escape(@query))
     end
 
     def parse_movie
@@ -31,18 +32,22 @@ module FilmAffinity
     end
 
     def parse_movies
-      movies = []
-      document_html.search('.movie-card.movie-card-1').each do |movie_card|
+      document_html.search('.movie-card.movie-card-1').map do |movie_card|
         id = movie_card['data-movie-id'].to_i
         title = movie_card.search('.mc-title a').first.content.strip
-        movie = FilmAffinity::Movie.new id, title
-        movies << movie
+
+        FilmAffinity::Movie.new(id, title)
       end
-      movies
     end
 
-    def to_json
-      @json_parser.to_json movies
+    def to_json(*_args)
+      @json_parser.to_json(movies)
+    end
+
+    private
+
+    def json_parser
+      @json_parser ||= JsonMoviesParser.new
     end
   end
 end

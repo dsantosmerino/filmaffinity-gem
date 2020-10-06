@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 Gem::Specification.new do |s|
   s.name        = 'filmaffinity'
   s.version     = '1.1.2'
@@ -12,9 +14,10 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.homepage      = 'https://github.com/davidsantosmerino/filmaffinity-gem'
   s.license       = 'MIT'
-  s.add_dependency 'nokogiri', '>= 1.8.1'
-  s.add_dependency 'json', ' ~> 1.8'
   s.add_dependency 'imgur-api', '~> 0'
+  s.add_dependency 'json', ' ~> 1.8'
+  s.add_dependency 'nokogiri', '>= 1.8.1'
   s.add_development_dependency 'rake', '~> 10.0'
   s.add_development_dependency 'rspec', '~> 3.3'
+  s.required_ruby_version = '>= 2.5.0'
 end

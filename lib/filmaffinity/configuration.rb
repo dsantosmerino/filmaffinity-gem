@@ -1,3 +1,4 @@
+# frozen_string_literal: false
 
 class Configuration
   attr_accessor :imgur_id, :language

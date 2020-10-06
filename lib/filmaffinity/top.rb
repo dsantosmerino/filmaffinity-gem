@@ -1,10 +1,10 @@
+# frozen_string_literal: false
+
 module FilmAffinity
-  # Class Top
   class Top
     def initialize(options: {}, limit: 30)
       @options = options
       @limit = limit
-      @json_parser = JsonMoviesParser.new
     end
 
     def movies
@@ -23,8 +23,7 @@ module FilmAffinity
     end
 
     def query_options
-      query_options = ''
-      query_options += '?'
+      query_options = '?'
       @options.each do |key, value|
         query_options += Constants.query_params[key] % value
       end
@@ -42,22 +41,29 @@ module FilmAffinity
       response = yield(from)
       collection += response
       last_position = collection.size
-      response.empty? || last_position >= @limit ? collection.flatten[0..@limit - 1] : collect_from(collection, last_position, &block)
+
+      if response.empty? || last_position >= @limit
+        collection.flatten[0..@limit - 1]
+      else
+        collect_from(collection, last_position, &block)
+      end
     end
 
     def parse_movies(document_html)
-      movies = []
-      document_html.search('.movie-card.movie-card-0').each_with_index do |movie_card, _index|
+      document_html.search('.movie-card.movie-card-0').map do |movie_card|
         id = movie_card['data-movie-id'].to_i
         title = movie_card.search('.mc-title a').first.content.strip
-        movie = FilmAffinity::Movie.new id, title
-        movies << movie
+
+        FilmAffinity::Movie.new(id, title)
       end
-      movies
     end
 
-    def to_json
-      @json_parser.to_json movies
+    def to_json(*_args)
+      @json_parser.to_json(movies)
+    end
+
+    def json_parser
+      @json_parser ||= JsonMoviesParser.new
     end
   end
 end

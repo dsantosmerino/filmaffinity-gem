@@ -1,3 +1,3 @@
 require 'rspec'
-$LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib')
 require 'filmaffinity'
+require_relative 'filmaffinity/matchers/include_movie'

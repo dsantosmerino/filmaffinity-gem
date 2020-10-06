@@ -1,4 +1,7 @@
-inherit_from: .rubocop_todo.yml 
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'spec/**/*'
 
-# Style/FileName:
-#   Enabled: false
+Documentation:
+  Enabled: false

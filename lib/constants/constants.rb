@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Constants
   def self.query_params
     {
@@ -18,75 +20,78 @@ module Constants
     }
   end
 
+  # rubocop:disable Metrics/MethodLength
   def self.tags
     {
 
-      title: { EN: '#main-title span',
-               ES: '#main-title span'
+      title: {
+        EN: '#main-title span',
+        ES: '#main-title span'
       },
-
-      year: { EN: 'dd[itemprop="datePublished"]',
-              ES: 'dd[itemprop="datePublished"]'
+      year: {
+        EN: 'dd[itemprop="datePublished"]',
+        ES: 'dd[itemprop="datePublished"]'
       },
-
-      duration: { EN: 'dd[itemprop="duration"]',
-                  ES: 'dd[itemprop="duration"]'
+      duration: {
+        EN: 'dd[itemprop="duration"]',
+        ES: 'dd[itemprop="duration"]'
       },
-
-      country: { EN: '#country-img',
-                 ES: '#country-img'
+      country: {
+        EN: '#country-img',
+        ES: '#country-img'
       },
-
-      director: { EN: 'a[itemprop="url"]',
-                  ES: 'a[itemprop="url"]'
+      director: {
+        EN: 'a[itemprop="url"]',
+        ES: 'a[itemprop="url"]'
       },
-
-      music: { EN: 'dt:contains("Music")',
-               ES: 'dt:contains("Music")'
+      music: {
+        EN: 'dt:contains("Music")',
+        ES: 'dt:contains("Music")'
       },
-
-      company: { EN: 'dt:contains("Producer")',
-                 ES: 'dt:contains("Productora")'
+      company: {
+        EN: 'dt:contains("Producer")',
+        ES: 'dt:contains("Productora")'
       },
-
-      script: { EN: 'dt:contains("Screenwriter")',
-                ES: 'dt:contains("Guion")'
+      script: {
+        EN: 'dt:contains("Screenwriter")',
+        ES: 'dt:contains("Guion")'
       },
-
-      photography: { EN: 'dt:contains("Cinematography")',
-                     ES: 'dt:contains("Fotografía")'
+      photography: {
+        EN: 'dt:contains("Cinematography")',
+        ES: 'dt:contains("Fotografía")'
       },
-
-      cast: { EN: 'span[itemprop="actor"]',
-              ES: 'span[itemprop="actor"]'
+      cast: {
+        EN: 'span[itemprop="actor"]',
+        ES: 'span[itemprop="actor"]'
       },
-
-      cast_each: { EN: 'span[itemprop="name"]',
-                   ES: 'span[itemprop="name"]'
+      cast_each: {
+        EN: 'span[itemprop="name"]',
+        ES: 'span[itemprop="name"]'
       },
-
-      genre: { EN: 'dt:contains("Genre")',
-               ES: 'dt:contains("Género")'
+      genre: {
+        EN: 'dt:contains("Genre")',
+        ES: 'dt:contains("Género")'
       },
-
-      sinopsis: { EN: 'dd[itemprop="description"]',
-                  ES: 'dd[itemprop="description"]'
+      sinopsis: {
+        EN: 'dd[itemprop="description"]',
+        ES: 'dd[itemprop="description"]'
       },
-
-      rating: { EN: 'div[itemprop="ratingValue"]',
-                ES: 'div[itemprop="ratingValue"]'
+      rating: {
+        EN: 'div[itemprop="ratingValue"]',
+        ES: 'div[itemprop="ratingValue"]'
       },
-
-      poster: { EN: 'img[itemprop="image"]',
-                ES: 'img[itemprop="image"]'
+      poster: {
+        EN: 'img[itemprop="image"]',
+        ES: 'img[itemprop="image"]'
       },
-
-      poster_big: { EN: 'a[class="lightbox"]',
-                    ES: 'a[class="lightbox"]'
+      poster_big: {
+        EN: 'a[class="lightbox"]',
+        ES: 'a[class="lightbox"]'
       }
 
     }
   end
+  # rubocop:enable Metrics/MethodLength
 
   def self.tag(type)
     lang = FilmAffinity.configuration.language.to_sym

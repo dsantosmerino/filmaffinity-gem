@@ -1,5 +1,4 @@
 require_relative '../spec_helper'
-require_relative 'matchers/include-movie'
 
 describe 'FilmAffinity::Search' do
   describe '#create_document_html' do
@@ -14,15 +13,14 @@ describe 'FilmAffinity::Search' do
   describe '#movies' do
     subject(:search) { FilmAffinity::Search.new('truman') }
 
-    it 'should return an array' do
+    it 'returns an array' do
       movies = search.movies
       expect(movies).to be_an(Array)
     end
-    it 'should return just FilmAffinity::Movie objects only' do
-      movies = search.movies
-      movies.each { |movie| expect(movie).to be_an(FilmAffinity::Movie) }
+    it 'returns just FilmAffinity::Movie objects only' do
+      expect(search.movies).to all(be_an(FilmAffinity::Movie))
     end
-    it 'should include "Truman Show"' do
+    it 'includes the "Truman Show"' do
       movies = search.movies
       truman_movie = FilmAffinity::Movie.new(504_889, 'El show de Truman (Una vida en directo)')
       expect(movies).to include_movie(truman_movie)
@@ -33,12 +31,12 @@ describe 'FilmAffinity::Search' do
     # Get a direct result from a specific searchs
     subject(:search) { FilmAffinity::Search.new('truman show') }
 
-    it 'should parse id' do
+    it 'parses the id' do
       id = 504_889
       expect(id).to eq(search.movies.first.id)
     end
 
-    it 'should parse title' do
+    it 'parses the title' do
       title = 'El show de Truman (Una vida en directo)  (1998)'
       expect(title).to eq(search.movies.first.title)
     end
