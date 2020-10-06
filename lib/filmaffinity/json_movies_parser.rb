@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class JsonMoviesParser
   def to_hashes(movies)
     hashes = []

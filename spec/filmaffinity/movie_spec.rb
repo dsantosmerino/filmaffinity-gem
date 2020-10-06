@@ -166,7 +166,7 @@ describe 'FilmAffinity::Movie' do
         FilmAffinity::Movie.new(504_889, 'El show de Truman (Una vida en directo)')
       end
       it 'should return an Fixnum' do
-        expect(movie.year).to be_an(Fixnum)
+        expect(movie.year).to be_an(Integer)
       end
       it 'should return 1998' do
         expect(movie.year).to eq(1998)
@@ -177,8 +177,8 @@ describe 'FilmAffinity::Movie' do
       subject(:movie) do
         FilmAffinity::Movie.new(504_889, 'El show de Truman (Una vida en directo)')
       end
-      it 'should return an Fixnum' do
-        expect(movie.duration).to be_a(Fixnum)
+      it 'should return an Integer' do
+        expect(movie.duration).to be_a(Integer)
       end
       it 'should return 103' do
         expect(movie.duration).to eq(103)
@@ -259,7 +259,7 @@ describe 'FilmAffinity::Movie' do
         expect(movie.genres).to be_an(Array)
       end
       it 'should to include the passed genres' do
-        expected_genres = %w(Drama Comedia Sátira)
+        expected_genres = %w[Drama Comedia Sátira]
         expect(movie.genres).to include(*expected_genres)
       end
     end
