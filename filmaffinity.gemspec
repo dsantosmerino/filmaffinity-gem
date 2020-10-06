@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'imgur-api', '~> 0'
   s.add_dependency 'json', '>= 1.8', '< 3.0'
   s.add_dependency 'nokogiri', '>= 1.8.1'
-  s.add_development_dependency 'rake', '~> 10.0'
+  s.add_development_dependency 'rake', '~> 12.3'
   s.add_development_dependency 'rspec', '~> 3.3'
   s.required_ruby_version = '>= 2.5.0'
 end

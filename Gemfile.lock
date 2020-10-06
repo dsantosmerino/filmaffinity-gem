@@ -28,7 +28,7 @@ GEM
     parser (2.7.2.0)
       ast (~> 2.4.1)
     rainbow (3.0.0)
-    rake (10.4.2)
+    rake (12.3.3)
     regexp_parser (1.8.1)
     rexml (3.2.4)
     rspec (3.4.0)
@@ -63,7 +63,7 @@ PLATFORMS
 
 DEPENDENCIES
   filmaffinity!
-  rake (~> 10.0)
+  rake (~> 12.3)
   rspec (~> 3.3)
   rubocop
 
