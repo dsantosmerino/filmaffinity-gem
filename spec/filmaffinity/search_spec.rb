@@ -39,7 +39,7 @@ describe 'FilmAffinity::Search' do
     end
 
     it 'should parse title' do
-      title = 'El show de Truman (Una vida en directo) (1998)'
+      title = 'El show de Truman (Una vida en directo)  (1998)'
       expect(title).to eq(search.movies.first.title)
     end
   end
