@@ -1,15 +1,6 @@
 require_relative '../spec_helper'
 
-describe 'FilmAffinity::Top' do
-  describe '#create_document_html' do
-    subject(:top) { FilmAffinity::Top.new }
-
-    it '#create_document_html' do
-      document_html = top.document_html 0
-      expect(document_html).to respond_to(:search)
-    end
-  end
-
+describe FilmAffinity::Top do
   describe '#movies' do
     context 'no options' do
       subject(:top) { FilmAffinity::Top.new }

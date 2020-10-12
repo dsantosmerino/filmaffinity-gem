@@ -1,15 +1,6 @@
 require_relative '../spec_helper'
 
-describe 'FilmAffinity::Search' do
-  describe '#create_document_html' do
-    subject(:search) { FilmAffinity::Search.new('truman') }
-
-    it '#create_document_html' do
-      document_html = search.document_html
-      expect(document_html).to be_an(Nokogiri::HTML::Document)
-    end
-  end
-
+describe FilmAffinity::Search do
   describe '#movies' do
     subject(:search) { FilmAffinity::Search.new('truman') }
 

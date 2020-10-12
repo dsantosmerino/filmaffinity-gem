@@ -3,7 +3,6 @@
 require 'cgi'
 
 module FilmAffinity
-  # Class Search
   class Search
     def initialize(query)
       @query = query
@@ -11,6 +10,16 @@ module FilmAffinity
 
     def movies
       @movies ||= (exact_match? ? parse_movie : parse_movies)
+    end
+
+    def to_json(*_args)
+      @json_parser.to_json(movies)
+    end
+
+    private
+
+    def json_parser
+      @json_parser ||= JsonMoviesParser.new
     end
 
     def exact_match?
@@ -28,6 +37,7 @@ module FilmAffinity
     def parse_movie
       id    = document_html.at('meta[property="og:url"]')['content'][/\d+/].to_i
       title = document_html.at('meta[property="og:title"]')['content']
+
       [FilmAffinity::Movie.new(id, title)]
     end
 
@@ -38,16 +48,6 @@ module FilmAffinity
 
         FilmAffinity::Movie.new(id, title)
       end
-    end
-
-    def to_json(*_args)
-      @json_parser.to_json(movies)
-    end
-
-    private
-
-    def json_parser
-      @json_parser ||= JsonMoviesParser.new
     end
   end
 end
