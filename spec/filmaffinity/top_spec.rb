@@ -1,6 +1,6 @@
 require_relative '../spec_helper'
 
-describe FilmAffinity::Top do
+describe FilmAffinity::Top, :vcr do
   describe '#movies' do
     context 'no options' do
       subject(:top) { FilmAffinity::Top.new }

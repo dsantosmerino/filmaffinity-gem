@@ -1,6 +1,6 @@
 require_relative '../spec_helper'
 
-describe JsonMovieParser do
+describe JsonMovieParser, :vcr do
   describe '#to_hash' do
     subject { JsonMovieParser.new }
 

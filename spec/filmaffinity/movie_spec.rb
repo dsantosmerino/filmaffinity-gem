@@ -1,6 +1,6 @@
 require_relative '../spec_helper'
 
-describe FilmAffinity::Movie do
+describe FilmAffinity::Movie, :vcr do
   subject(:movie) do
     FilmAffinity::Movie.new(504_889, 'El show de Truman (Una vida en directo)')
   end

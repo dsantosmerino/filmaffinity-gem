@@ -1,6 +1,6 @@
 require_relative '../spec_helper'
 
-describe FilmAffinity::Search do
+describe FilmAffinity::Search, :vcr do
   describe '#movies' do
     subject(:search) { FilmAffinity::Search.new('truman') }
 
