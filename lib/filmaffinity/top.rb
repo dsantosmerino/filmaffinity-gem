@@ -11,6 +11,16 @@ module FilmAffinity
       @movies = movies_with_limit
     end
 
+    def to_json(*_args)
+      @json_parser.to_json(movies)
+    end
+
+    private
+
+    def json_parser
+      @json_parser ||= JsonMoviesParser.new
+    end
+
     def document_html(from)
       @document_html = Nokogiri::HTML(generate_html(from))
     end
@@ -56,14 +66,6 @@ module FilmAffinity
 
         FilmAffinity::Movie.new(id, title)
       end
-    end
-
-    def to_json(*_args)
-      @json_parser.to_json(movies)
-    end
-
-    def json_parser
-      @json_parser ||= JsonMoviesParser.new
     end
   end
 end

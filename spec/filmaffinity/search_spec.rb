@@ -1,15 +1,6 @@
 require_relative '../spec_helper'
 
-describe 'FilmAffinity::Search' do
-  describe '#create_document_html' do
-    subject(:search) { FilmAffinity::Search.new('truman') }
-
-    it '#create_document_html' do
-      document_html = search.document_html
-      expect(document_html).to be_an(Nokogiri::HTML::Document)
-    end
-  end
-
+describe FilmAffinity::Search, :vcr do
   describe '#movies' do
     subject(:search) { FilmAffinity::Search.new('truman') }
 
@@ -22,7 +13,9 @@ describe 'FilmAffinity::Search' do
     end
     it 'includes the "Truman Show"' do
       movies = search.movies
-      truman_movie = FilmAffinity::Movie.new(504_889, 'El show de Truman (Una vida en directo)')
+      truman_movie = FilmAffinity::Movie.new(
+        504_889, 'El show de Truman (Una vida en directo)'
+      )
       expect(movies).to include_movie(truman_movie)
     end
   end
