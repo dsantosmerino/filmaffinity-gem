@@ -13,7 +13,9 @@ describe FilmAffinity::Search do
     end
     it 'includes the "Truman Show"' do
       movies = search.movies
-      truman_movie = FilmAffinity::Movie.new(504_889, 'El show de Truman (Una vida en directo)')
+      truman_movie = FilmAffinity::Movie.new(
+        504_889, 'El show de Truman (Una vida en directo)'
+      )
       expect(movies).to include_movie(truman_movie)
     end
   end
