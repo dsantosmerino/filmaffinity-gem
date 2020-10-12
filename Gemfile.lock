@@ -57,6 +57,7 @@ GEM
       parser (>= 2.7.1.5)
     ruby-progressbar (1.10.1)
     unicode-display_width (1.7.0)
+    vcr (6.0.0)
 
 PLATFORMS
   ruby
@@ -66,6 +67,7 @@ DEPENDENCIES
   rake (~> 12.3)
   rspec (~> 3.3)
   rubocop
+  vcr
 
 BUNDLED WITH
    2.1.4
