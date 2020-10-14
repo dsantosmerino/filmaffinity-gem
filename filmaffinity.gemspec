@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.homepage      = 'https://github.com/davidsantosmerino/filmaffinity-gem'
   s.license       = 'MIT'
+  s.add_dependency 'dry-struct', '~> 1.3'
   s.add_dependency 'imgur-api', '~> 0'
   s.add_dependency 'json', '>= 1.8', '< 3.0'
   s.add_dependency 'nokogiri', '>= 1.8.1'
