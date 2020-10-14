@@ -31,4 +31,4 @@ jobs:
         gem install bundler
         bundle install --jobs 4 --retry 3
     - name: RSpec
-      run: bundle exec rspec
+      run: bundle exec rspec --order rand
