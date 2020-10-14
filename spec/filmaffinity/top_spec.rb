@@ -8,12 +8,12 @@ describe FilmAffinity::Top, :vcr do
       it 'returns an array' do
         expect(top.movies).to be_an(Array)
       end
-      it 'returns just FilmAffinity::Movie objects only' do
-        top.movies.each { |movie| expect(movie).to be_an(FilmAffinity::Movie) }
+      it 'returns FilmAffinity::Movie objects only' do
+        expect(top.movies).to all(be_an(FilmAffinity::Movie))
       end
-      it 'includes "El Padrino"' do
-        el_padrino_movie = FilmAffinity::Movie.new(809_297, 'El padrino')
-        expect(top.movies).to include_movie(el_padrino_movie)
+      it 'includes "The Godfather"' do
+        the_godfather = FilmAffinity::Movie.new(809_297, 'The Godfather')
+        expect(top.movies).to include_movie(the_godfather)
       end
       it 'returns 30 movies' do
         expect(top.movies.size).to eq(30)
@@ -28,16 +28,14 @@ describe FilmAffinity::Top, :vcr do
         it 'returns an array' do
           expect(top.movies).to be_an(Array)
         end
-        it 'returns just FilmAffinity::Movie objects only' do
-          top.movies.each do |movie|
-            expect(movie).to be_an(FilmAffinity::Movie)
-          end
+        it 'returns FilmAffinity::Movie objects only' do
+          expect(top.movies).to all(be_an(FilmAffinity::Movie))
         end
-        it 'includes "Hijos del Tercer Reich (Miniserie de TV)"' do
-          hijos = FilmAffinity::Movie.new(
-            831_118, 'Hijos del Tercer Reich (Miniserie de TV)'
+        it 'includes "Generation War (TV Miniseries)"' do
+          generation_war = FilmAffinity::Movie.new(
+            831_118, 'Generation War (TV Miniseries)'
           )
-          expect(top.movies).to include_movie(hijos)
+          expect(top.movies).to include_movie(generation_war)
         end
       end
       context 'only with limit' do

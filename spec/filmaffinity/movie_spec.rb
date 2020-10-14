@@ -108,6 +108,13 @@ describe FilmAffinity::Movie, :vcr do
         config.language = 'ES'
       end
     end
+
+    after(:all) do
+      FilmAffinity.configure do |config|
+        config.language = 'EN'
+      end
+    end
+
     describe '#title' do
       subject(:movie) do
         FilmAffinity::Movie.new(504_889)

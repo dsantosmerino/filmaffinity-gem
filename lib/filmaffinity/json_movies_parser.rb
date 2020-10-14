@@ -2,19 +2,15 @@
 
 class JsonMoviesParser
   def to_hashes(movies)
-    hashes = []
-    movies.each do |movie|
-      hash = {
+    movies.map do |movie|
+      {
         'id' => movie.id,
         'title' => movie.title
       }
-      hashes << hash
     end
-    hashes
   end
 
   def to_json(movies)
-    hashes = to_hashes movies
-    hashes.to_json
+    to_hashes(movies).to_json
   end
 end
