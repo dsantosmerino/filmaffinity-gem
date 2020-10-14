@@ -3,6 +3,7 @@
 require 'open-uri'
 require 'nokogiri'
 
+require_relative 'filmaffinity/src'
 require_relative 'constants/constants'
 require_relative 'filmaffinity/configuration'
 require_relative 'filmaffinity/poster_manager'
@@ -11,7 +12,7 @@ require_relative 'filmaffinity/json_movie_parser'
 require_relative 'filmaffinity/movie'
 require_relative 'filmaffinity/search'
 require_relative 'filmaffinity/top'
-# Module FilmAffinity
+
 module FilmAffinity
   class << self
     attr_writer :configuration
