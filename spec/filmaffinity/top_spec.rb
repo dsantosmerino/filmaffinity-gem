@@ -9,7 +9,7 @@ describe FilmAffinity::Top, :vcr do
         expect(top.movies).to be_an(Array)
       end
       it 'returns FilmAffinity::Movie objects only' do
-        top.movies.each { |movie| expect(movie).to be_an(FilmAffinity::Movie) }
+        expect(top.movies).to all(be_an(FilmAffinity::Movie))
       end
       it 'includes "The Godfather"' do
         the_godfather = FilmAffinity::Movie.new(809_297, 'The Godfather')
@@ -29,9 +29,7 @@ describe FilmAffinity::Top, :vcr do
           expect(top.movies).to be_an(Array)
         end
         it 'returns FilmAffinity::Movie objects only' do
-          top.movies.each do |movie|
-            expect(movie).to be_an(FilmAffinity::Movie)
-          end
+          expect(top.movies).to all(be_an(FilmAffinity::Movie))
         end
         it 'includes "Generation War (TV Miniseries)"' do
           generation_war = FilmAffinity::Movie.new(
