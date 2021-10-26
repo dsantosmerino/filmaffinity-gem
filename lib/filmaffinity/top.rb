@@ -1,4 +1,4 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 module FilmAffinity
   class Top
@@ -37,7 +37,7 @@ module FilmAffinity
       @options.each do |key, value|
         query_options += Constants.query_params[key] % value
       end
-      query_options.gsub(/\&$/, '')
+      query_options.gsub(/&$/, '')
     end
 
     def movies_with_limit

@@ -1,4 +1,6 @@
-require_relative '../spec_helper'
+# frozen_string_literal: true
+
+require 'spec_helper'
 
 describe JsonMovieParser, :vcr do
   describe '#to_hash' do

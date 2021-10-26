@@ -1,4 +1,4 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 require 'open-uri'
 require 'imgur'
@@ -12,7 +12,7 @@ class PosterManager
 
   def upload(posterurl, api_id)
     imgur = Imgur.new(api_id)
-    @dir = __dir__ + '/' + random_name + '.jpg'
+    @dir = "#{__dir__}/#{random_name}.jpg"
     save_img_locally(posterurl)
     local_image = Imgur::LocalImage.new(@dir)
     uploaded = imgur.upload(local_image)
@@ -21,7 +21,7 @@ class PosterManager
   end
 
   def save_img_locally(posterurl)
-    URI.open(posterurl) do |f|
+    URI.parse(posterurl).open do |f|
       File.open(@dir, 'wb') do |file|
         file.puts f.read
       end

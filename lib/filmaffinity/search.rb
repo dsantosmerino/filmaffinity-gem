@@ -1,4 +1,4 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 require 'cgi'
 
@@ -31,7 +31,7 @@ module FilmAffinity
     end
 
     def generate_html
-      URI.open(Constants.urls[:search_by_title] % CGI.escape(@query))
+      URI.parse(Constants.urls[:search_by_title] % CGI.escape(@query)).open
     end
 
     def parse_movie
