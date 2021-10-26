@@ -1,4 +1,4 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 require 'open-uri'
 require 'nokogiri'
@@ -11,7 +11,8 @@ require_relative 'filmaffinity/json_movie_parser'
 require_relative 'filmaffinity/movie'
 require_relative 'filmaffinity/search'
 require_relative 'filmaffinity/top'
-# Module FilmAffinity
+require_relative 'filmaffinity/version'
+
 module FilmAffinity
   class << self
     attr_writer :configuration

@@ -1,4 +1,4 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 module FilmAffinity
   class Movie
@@ -16,7 +16,7 @@ module FilmAffinity
     end
 
     def generate_html
-      URI.open(Constants.urls[:movie] % id)
+      URI.parse(Constants.urls[:movie] % id).open
     end
 
     def title
