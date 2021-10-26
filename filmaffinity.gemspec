@@ -1,8 +1,12 @@
 # frozen_string_literal: false
 
+$LOAD_PATH.unshift File.expand_path('lib', __dir__)
+
+require 'filmaffinity/version'
+
 Gem::Specification.new do |gem|
   gem.name          = 'filmaffinity'
-  gem.version       = '1.1.3'
+  gem.version       = FilmAffinity::VERSION
   gem.summary       = 'filmaffinity'
   gem.description   = 'Easily use Ruby or the command line to find information on Filmaffinity.com'
   gem.authors       = ['David Santos', 'Oriol Bellido']

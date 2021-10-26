@@ -11,6 +11,7 @@ require_relative 'filmaffinity/json_movie_parser'
 require_relative 'filmaffinity/movie'
 require_relative 'filmaffinity/search'
 require_relative 'filmaffinity/top'
+require_relative 'filmaffinity/version'
 
 module FilmAffinity
   class << self
