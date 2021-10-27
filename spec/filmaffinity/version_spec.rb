@@ -10,6 +10,6 @@ RSpec.describe FilmAffinity::VERSION do
   end
 
   it "returns the expected version" do
-    expect(subject).to eq("1.1.3")
+    expect(subject).to eq("1.1.4")
   end
 end
