@@ -13,7 +13,7 @@ module FilmAffinity
     end
 
     def to_json(*_args)
-      @json_parser.to_json(movies)
+      json_parser.to_json(movies)
     end
 
     private

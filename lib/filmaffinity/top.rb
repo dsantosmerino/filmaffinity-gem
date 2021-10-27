@@ -8,11 +8,11 @@ module FilmAffinity
     end
 
     def movies
-      @movies = movies_with_limit
+      @movies ||= movies_with_limit
     end
 
     def to_json(*_args)
-      @json_parser.to_json(movies)
+      json_parser.to_json(movies)
     end
 
     private
