@@ -1,7 +1,7 @@
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.7
   Exclude:
     - 'spec/**/*'
 
-Documentation:
+Style/Documentation:
   Enabled: false
