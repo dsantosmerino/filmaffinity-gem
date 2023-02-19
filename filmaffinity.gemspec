@@ -12,7 +12,6 @@ Gem::Specification.new do |gem|
   gem.authors       = ['David Santos', 'Oriol Bellido']
   gem.email         = 'dsantosmerino@gmail.com'
   gem.files         = `git ls-files`.split("\n")
-  gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   gem.require_paths = ['lib']
   gem.homepage      = 'https://github.com/davidsantosmerino/filmaffinity-gem'
@@ -23,4 +22,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rake', '~> 12.3'
   gem.add_development_dependency 'rspec', '~> 3.3'
   gem.required_ruby_version = '>= 2.7.0'
+  gem.metadata['rubygems_mfa_required'] = 'true'
 end
