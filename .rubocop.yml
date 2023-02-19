@@ -3,6 +3,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'spec/**/*'
+    - vendor/bundle/**/*
 
 Style/Documentation:
   Enabled: false
