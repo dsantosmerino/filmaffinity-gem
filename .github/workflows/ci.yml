@@ -5,13 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Rubocop
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Ruby 3.0
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0
-    - name: Install dependencies
-      run: gem install rubocop
+        bundler-cache: true
     - name: Rubocop
       run: rubocop
   test:
@@ -23,12 +22,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby ${{ matrix.ruby }}
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Install dependencies
-      run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
+        bundler-cache: true
     - name: RSpec
       run: bundle exec rspec --order rand
